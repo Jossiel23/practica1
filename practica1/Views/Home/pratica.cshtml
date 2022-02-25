@@ -1,0 +1,56 @@
+﻿@model practica1.Models.Acciones
+@{
+    ViewData["Title"] = "pratica";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Operaciones </h1>
+
+@*trabajando con peticiones post*@
+
+<div class="color">
+    <form asp-controller="Home" asp-action="pratica">
+        <div class="card">
+            <label> DATO 1</label>
+
+            @if (ViewBag.DatoN1V == 0)
+            {
+
+                <input type="number" asp-for="Dato1" placeholder="Escribe el primer numero" class="form-control" min="0" max="1000000000" />
+
+
+            }
+            else
+            {
+                <input type="number" asp-for="Dato1"placeholder="Escribe el primer numero"  value="@ViewBag.DatoN1V" class="form-control" />
+            }
+
+
+
+            <label> DATO 2</label>
+
+
+            @if (ViewBag.DatoN2V == 0)
+            {
+
+                <input type="number" asp-for="Dato2"placeholder="Escribe el segundo numero"  class="form-control" min="0" max="1000000000" />
+
+
+            }
+            else
+            {
+                <input type="number" asp-for="Dato2 " placeholder="Escribe el  segundo numero"  value="@ViewBag.DatoN2V" class="form-control" />
+            }
+
+
+
+            <button class="btn btn-primary">Sumar Datos</button>
+        </div>
+
+
+        <label>Resultado</label>
+        <label> @ViewBag.VariableAEnviar </label>
+
+    </form>
+    <div class="acheref"> <a href="index" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Pagina principal</a></div>
+</div>
